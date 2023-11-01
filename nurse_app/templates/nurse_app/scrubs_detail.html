@@ -1,11 +1,11 @@
 {% extends 'nurse_app/base_template.html' %}
 
 {% block content %}
-<h1>scrub brand: {{ Scrubs.name }}</h1>
+<h1>scrub brand: {{scrubs.name  }}</h1>
 
-<p><strong>color:</strong> {{ Scrubs.color }}</p>
-<p><strong>size:</strong> {{ Scrubs.size }}</p>
-<p><strong> description:</strong>{{Scrubs.description}}</p>
-<p><strong> is_new:</strong>{{Scrubs.is_new}}</p>
-<p><strong> price:</strong>{{Scrubs.price}}</p>
+<p><strong>color:</strong> {{ scrubs.color }}</p>
+<p><strong>size:</strong> {{ scrubs.size }}</p>
+<p><strong> description:</strong>{{scrubs.description}}</p>
+<p><strong> is_new:</strong>{{scrubs.is_new}}</p>
+<p><strong> price:</strong>{{scrubs.price}}</p>
 {% endblock %}

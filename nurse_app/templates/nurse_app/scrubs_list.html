@@ -2,9 +2,9 @@
 
 {% block content %}
 <h1>Scrub List</h1>
-{% if scrub_list %}
+{% if scrubs_list %}
 <ul>
-{% for i in scrub_list %}
+{% for i in scrubs_list %}
 <li>
 <p><strong>Brand:{{ i.name }}
 <a href="{{ i.get_absolute_url }}">{{ i.name }}</a>

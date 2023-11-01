@@ -10,9 +10,9 @@
 <h2>List of scrubs that are brand new</h2>
 <ul class="list-group">
 {% for i in nurse_active %}
-<li class="list-group-item"> Scrub: {{i.name}}
-<p><strong>Brand:{{ i.name }}
-<a class="btn btn-primary" href="{{ i.name.get_absolute_url }}" role="button">View</a>
+<li class="list-group-item"> Brand: {{i.name}}
+
+<a class="btn btn-primary" href="{{ i.get_absolute_url }}" role="button">View</a>
 </li>
 {% endfor %}
 </ul>

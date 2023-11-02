@@ -7,8 +7,8 @@
 <ul>
 {% for i in scrubs_list %}
 <li>
-<p><strong>Brand:{{ i.name }}
-<a href="{{ i.get_absolute_url }}">{{ i.name }}</a>
+<p class= " p-5 mb-3 bg-success text-info"><strong>Brand:{{ i.name }}
+
 <a class="btn btn-primary" href="{{ i.get_absolute_url }}" role="button">View</a>
 <a class="btn btn-danger" href="{% url 'scrub-delete' i.pk %}" role="button">Delete</a>
 <a class="btn btn-secondary" href="{% url 'scrub-edit' i.pk %}" role="button">Edit</a>

@@ -4,7 +4,7 @@ from django.http import HttpResponse
 
 from django.views import generic 
 from .models import *
-#from .forms import *
+from .forms import *
 from django.shortcuts import redirect
 from django.shortcuts import Http404
 from django.contrib import messages
@@ -32,6 +32,20 @@ class ScrubsDetailView(generic.DetailView):
         scrubs = Scrubs.objects.get(pk=pk)  # Retrieve the specific Scrub object
         return render(request, 'scrubs_detail.html', {'scrub': scrubs})
 
+
+def createProject(request):
+    form = ProjectForm()
+
+    if request.method == 'POST':
+        form = ProjectForm(request.POST)
+        if form.is_valid():
+            # Create a new Scrub object
+            new_scrub = form.save()
+            # Redirect to the detail view of the new Scrub object
+            return redirect('scrub-detail', pk=new_scrub.pk)
+    
+    # Handle GET request or form errors
+    return render(request, 'nurse_app/scrubs_form.html', {'form': form})
 
 
 

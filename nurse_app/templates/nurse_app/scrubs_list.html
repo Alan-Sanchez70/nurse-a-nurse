@@ -2,12 +2,14 @@
 
 {% block content %}
 <h1>Scrub List</h1>
+<a class="btn btn-primary" href="{% url 'create_scrub' %}" role="button">New</a>
 {% if scrubs_list %}
 <ul>
 {% for i in scrubs_list %}
 <li>
 <p><strong>Brand:{{ i.name }}
 <a href="{{ i.get_absolute_url }}">{{ i.name }}</a>
+<a class="btn btn-primary" href="{{ i.get_absolute_url }}" role="button">View</a>
 </li>
 {% endfor %}
 </ul>

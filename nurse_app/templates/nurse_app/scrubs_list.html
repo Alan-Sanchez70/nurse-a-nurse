@@ -10,6 +10,8 @@
 <p><strong>Brand:{{ i.name }}
 <a href="{{ i.get_absolute_url }}">{{ i.name }}</a>
 <a class="btn btn-primary" href="{{ i.get_absolute_url }}" role="button">View</a>
+<a class="btn btn-danger" href="{% url 'scrub-delete' i.pk %}" role="button">Delete</a>
+
 </li>
 {% endfor %}
 </ul>

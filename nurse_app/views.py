@@ -8,7 +8,8 @@ from .forms import *
 from django.shortcuts import redirect
 from django.shortcuts import Http404
 from django.contrib import messages
-# Create your views here.
+from django.urls import reverse_lazy
+from django.views.generic.edit import DeleteView
 from django.http import HttpResponse
 # Create your views here.
 def index(request):
@@ -48,5 +49,8 @@ def createProject(request):
     return render(request, 'nurse_app/scrubs_form.html', {'form': form})
 
 
-
+class ScrubDeleteView(DeleteView):
+    model = Scrubs
+    template_name = 'nurse_app/scrubs_delete.html'  # Create a template for the delete confirmation
+    success_url = reverse_lazy('scrub-list')  # URL to redirect to after successful deletion
 

@@ -11,5 +11,6 @@ path('', views.index, name='index'),
 path('scrubs/', views.ScrubsListView.as_view(), name= 'scrub'),
 path('scrubs/<int:pk>', views.ScrubsDetailView.as_view(), name='scrub-detail'),
 path('scrubs/create_project/', views.createProject, name='create_scrub'),
+path('scrubs/<int:pk>/delete/', views.ScrubDeleteView.as_view(), name='scrub-delete'),
 
 ]

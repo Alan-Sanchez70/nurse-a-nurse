@@ -10,6 +10,7 @@ from django.shortcuts import Http404
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views.generic.edit import DeleteView
+from django.views.generic.edit import UpdateView
 from django.http import HttpResponse
 # Create your views here.
 def index(request):
@@ -53,4 +54,10 @@ class ScrubDeleteView(DeleteView):
     model = Scrubs
     template_name = 'nurse_app/scrubs_delete.html'  # Create a template for the delete confirmation
     success_url = reverse_lazy('scrub')  # URL to redirect to after successful deletion
+
+class ScrubUpdateView(UpdateView):
+    model = Scrubs
+    template_name = 'nurse_app/scrubs_update.html'  # Create a template for the edit form
+    fields = ['name', 'color', 'size', 'description', 'is_new', 'price']  # Fields to edit
+    success_url = reverse_lazy('scrub')  # URL to redirect to after successful edit
 

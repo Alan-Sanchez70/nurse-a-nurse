@@ -52,5 +52,5 @@ def createProject(request):
 class ScrubDeleteView(DeleteView):
     model = Scrubs
     template_name = 'nurse_app/scrubs_delete.html'  # Create a template for the delete confirmation
-    success_url = reverse_lazy('scrub-list')  # URL to redirect to after successful deletion
+    success_url = reverse_lazy('scrub')  # URL to redirect to after successful deletion
 

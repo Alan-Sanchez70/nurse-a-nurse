@@ -19,7 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #connect path to portfolio_app urls
+    #connect path to nurse_app urls
     path('', include('nurse_app.urls')),
     
 

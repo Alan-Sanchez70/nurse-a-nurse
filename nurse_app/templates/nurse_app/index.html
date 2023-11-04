@@ -3,9 +3,18 @@
 
 <!-- Replace block content in base_template.html -->
 {% block content %}
-<h1>Nurse-a-nurse</h1>
-<p><strong>Buy a scrub used or new to save some money!</strong></p>
-<p>The website helps all undergraduate nurses to buy scrubs at a lower price.<p>
-<h2>More to come</h2>
+<div class="p-3 mb-2  bg-primary text-dark">Buy a scrub used or new to save some money!</div>
+<div class="p-3 mb-2  bg-primary text-dark">The website helps all undergraduate nurses to buy scrubs at a lower price.</div>
 
+<h2 class="text-info">List of scrubs that are brand new</h2>
+<ul class="list-group">
+{% for i in nurse_active %}
+<li class="list-group-item"> Brand: {{i.name}}
+
+<a class="btn btn-primary" href="{{ i.get_absolute_url }}" role="button">View</a>
+</li>
+{% endfor %}
+</ul>
 {% endblock %}
+
+

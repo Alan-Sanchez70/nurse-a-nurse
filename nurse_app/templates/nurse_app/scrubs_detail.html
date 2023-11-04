@@ -1,0 +1,13 @@
+{% extends 'nurse_app/base_template.html' %}
+
+{% block content %}
+<h1>scrub brand: {{scrubs.name  }}</h1>
+
+<p  class= " p-5 mb-3 bg-warning text-success"><strong>color:</strong> {{ scrubs.color }}</p>
+<p class= " p-5 mb-3 bg-warning text-success"><strong>size:</strong> {{ scrubs.size }}</p>
+<p class= " p-5 mb-3 bg-warning text-success"><strong> description:</strong>{{scrubs.description}}</p>
+<p class= " p-5 mb-3 bg-warning text-success"><strong> is_new:</strong>{{scrubs.is_new}}</p>
+<p class= " p-5 mb-3 bg-warning text-success"><strong> price:</strong>{{scrubs.price}}</p>
+
+<a class="btn btn-secondary" href="{% url 'scrub' %}" role="button">Back</a>
+{% endblock %}

@@ -31,13 +31,13 @@ def index(request):
 
 #scrub classes
 #these classes contain the templates of how are going to be display and getting the queries fro the database.
-class ScrubsListView(LoginRequiredMixin,generic.ListView):
+class ScrubsListView(generic.ListView):
    model = Scrubs
    
    def scrub_list_view(request):
         scrubs_list = Scrubs.objects.all()  # Fetch all Scrub objects from the database
         return render(request, 'nurse_app/scrubs_list.html', {'scrub_list': scrubs_list})
-class ScrubsDetailView(LoginRequiredMixin,generic.DetailView):
+class ScrubsDetailView(generic.DetailView):
    model = Scrubs
 
    def scrub_detail(self, request, pk):
@@ -61,13 +61,13 @@ def createProject(request):
     return render(request, 'nurse_app/scrubs_form.html', {'form': form})
 
 
-class ScrubDeleteView(DeleteView):
+class ScrubDeleteView(LoginRequiredMixin, DeleteView):
     model = Scrubs
     template_name = 'nurse_app/scrubs_delete.html'  # Create a template for the delete confirmation
     success_url = reverse_lazy('scrub')  # URL to redirect to after successful deletion
 
 
-class ScrubUpdateView(UpdateView):
+class ScrubUpdateView(LoginRequiredMixin, UpdateView):
     model = Scrubs
     template_name = 'nurse_app/scrubs_update.html'  # Create a template for the edit form
     fields = ['name', 'color', 'size', 'description', 'is_new', 'price']  # Fields to edit

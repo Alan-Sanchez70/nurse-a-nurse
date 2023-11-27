@@ -12,6 +12,13 @@
 <a class="btn btn-primary" href="{{ i.get_absolute_url }}" role="button">View</a>
 <a class="btn btn-danger" href="{% url 'scrub-delete' i.pk %}" role="button">Delete</a>
 <a class="btn btn-secondary" href="{% url 'scrub-edit' i.pk %}" role="button">Edit</a>
+<body>
+    <h1>Checkout Page</h1>
+    
+    <form action="{% url 'create_payment' %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">Pay with PayPal</button>
+    </form>
 
 
 </li>

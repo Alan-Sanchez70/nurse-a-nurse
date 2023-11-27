@@ -9,5 +9,12 @@
 <p class= " p-5 mb-3 bg-warning text-success"><strong> is_new:</strong>{{scrubs.is_new}}</p>
 <p class= " p-5 mb-3 bg-warning text-success"><strong> price:</strong>{{scrubs.price}}</p>
 
+<body>
+    <h1>Checkout Page</h1>
+    
+    <form action="{% url 'create_payment' %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">Pay with PayPal</button>
+    </form>
 <a class="btn btn-secondary" href="{% url 'scrub' %}" role="button">Back</a>
 {% endblock %}
